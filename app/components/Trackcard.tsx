@@ -92,7 +92,7 @@ export default function TrackCard({
           </div>
         </div>
 
-        {isPlaying && (
+        {isPlaying && averageColor && (
           <div className="music-bars">
             {Array(6)
               .fill(null)
