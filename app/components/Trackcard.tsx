@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import NextImage from "next/image";
+import { useEffect, useState, useCallback } from "react";
 import formatDate from "../utils/formatDate";
-import { useEffect, useRef, useState } from "react";
 
 interface TrackCardProps {
   lastPlayedAt: string;
@@ -22,22 +22,16 @@ export default function TrackCard({
   lastPlayedAt,
 }: TrackCardProps) {
   const [averageColor, setAverageColor] = useState("");
-  const imgRef = useRef<HTMLImageElement | null>(null);
 
-  const calculateAverageColor = (image: HTMLImageElement) => {
+  const calculateAverageColor = useCallback((img: HTMLImageElement) => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
-
     if (ctx) {
-      const width = image.width;
-      const height = image.height;
-      canvas.width = width;
-      canvas.height = height;
-
-      ctx.drawImage(image, 0, 0, width, height);
-
-      const imageData = ctx.getImageData(0, 0, width, height);
-      const { data } = imageData;
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
       let r = 0,
         g = 0,
         b = 0;
@@ -53,40 +47,31 @@ export default function TrackCard({
       g = Math.floor(g / pixelCount);
       b = Math.floor(b / pixelCount);
 
-      const averageColor = `rgb(${r}, ${g}, ${b})`;
-      setAverageColor(averageColor);
+      setAverageColor(`rgb(${r}, ${g}, ${b})`);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    if (imgRef.current) {
-      const image = imgRef.current;
-
-      if (image.complete) {
-        calculateAverageColor(image);
-      } else {
-        image.crossOrigin = "Anonymous";
-
-        image.onload = () => {
-          calculateAverageColor(image);
-        };
-      }
-    }
-  }, [imgUrl]);
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = imgUrl;
+    img.onload = () => calculateAverageColor(img);
+    img.onerror = () =>
+      console.error("Error loading image for color calculation");
+  }, [imgUrl, calculateAverageColor]);
 
   return (
     <div className="w-full rounded-lg py-1 px-1 bg-card flex flex-col space-y-1">
       <div className="w-full border rounded-lg flex bg-background items-center justify-between shadow-sm p-1">
         <div className="flex space-x-2">
-          <Image
-            ref={imgRef}
+          <NextImage
             src={imgUrl}
-            alt=""
+            alt={`Album cover for ${name} by ${artist}`}
             width={54}
             height={54}
             className="rounded-lg shadow-sm"
+            unoptimized
           />
-
           <div className="flex flex-col justify-center gap-y-1">
             <a
               className="text-sm truncate max-w-48 sm:max-w-64 md:max-w-80 underline decoration-decoration cursor-pointer hover:text-muted transition-all"
@@ -99,8 +84,7 @@ export default function TrackCard({
             <p className="text-sm text-muted">{artist}</p>
           </div>
         </div>
-
-        {isPlaying && averageColor && (
+        {isPlaying && (
           <div className="music-bars">
             {Array(6)
               .fill(null)
@@ -114,7 +98,6 @@ export default function TrackCard({
           </div>
         )}
       </div>
-
       <div className="flex items-center space-x-1 pl-1">
         <span
           className={`h-2 w-2 rounded-full shadow-sm ${
