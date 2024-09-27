@@ -24,48 +24,56 @@ export default function TrackCard({
   const [averageColor, setAverageColor] = useState("");
   const imgRef = useRef<HTMLImageElement | null>(null);
 
-  console.log(trackUrl);
+  const calculateAverageColor = (image: HTMLImageElement) => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    if (ctx) {
+      const width = image.width;
+      const height = image.height;
+      canvas.width = width;
+      canvas.height = height;
+
+      ctx.drawImage(image, 0, 0, width, height);
+
+      const imageData = ctx.getImageData(0, 0, width, height);
+      const { data } = imageData;
+      let r = 0,
+        g = 0,
+        b = 0;
+
+      for (let i = 0; i < data.length; i += 4) {
+        r += data[i];
+        g += data[i + 1];
+        b += data[i + 2];
+      }
+
+      const pixelCount = data.length / 4;
+      r = Math.floor(r / pixelCount);
+      g = Math.floor(g / pixelCount);
+      b = Math.floor(b / pixelCount);
+
+      const averageColor = `rgb(${r}, ${g}, ${b})`;
+      setAverageColor(averageColor);
+    }
+  };
+
   useEffect(() => {
     if (imgRef.current) {
       const image = imgRef.current;
 
-      image.crossOrigin = "Anonymous";
+      if (image.complete) {
+        calculateAverageColor(image);
+      } else {
+        image.crossOrigin = "Anonymous";
 
-      image.onload = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-
-        if (ctx) {
-          const width = image.width;
-          const height = image.height;
-          canvas.width = width;
-          canvas.height = height;
-
-          ctx.drawImage(image, 0, 0, width, height);
-
-          const imageData = ctx.getImageData(0, 0, width, height);
-          const { data } = imageData;
-          let r = 0,
-            g = 0,
-            b = 0;
-
-          for (let i = 0; i < data.length; i += 4) {
-            r += data[i];
-            g += data[i + 1];
-            b += data[i + 2];
-          }
-
-          const pixelCount = data.length / 4;
-          r = Math.floor(r / pixelCount);
-          g = Math.floor(g / pixelCount);
-          b = Math.floor(b / pixelCount);
-
-          const averageColor = `rgb(${r}, ${g}, ${b})`;
-          setAverageColor(averageColor);
-        }
-      };
+        image.onload = () => {
+          calculateAverageColor(image);
+        };
+      }
     }
-  }, []);
+  }, [imgUrl]);
+
   return (
     <div className="w-full rounded-lg py-1 px-1 bg-card flex flex-col space-y-1">
       <div className="w-full border rounded-lg flex bg-background items-center justify-between shadow-sm p-1">
