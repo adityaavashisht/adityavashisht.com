@@ -30,7 +30,6 @@ export const getAccessToken = async () => {
   if (!res.ok) {
     throw new Error(`Failed to fetch access token: ${data.error}`);
   }
-
   return data.access_token;
 };
 
