@@ -108,7 +108,7 @@ export default function TrackCard({
           {isPlaying
             ? "Listening now"
             : lastPlayedAt
-            ? `Last played at ${formatDate(lastPlayedAt)}`
+            ? `Last played on ${formatDate(lastPlayedAt)}`
             : null}
         </span>
       </div>
