@@ -29,7 +29,7 @@ export default async function Spotify() {
       trackUrl={
         nowPlaying
           ? nowPlaying.item.external_urls.spotify
-          : recentlyPlayed.items[0].href
+          : recentlyPlayed.items[0].track.external_urls.spotify
       }
       lastPlayedAt={recentlyPlayed.items[0].played_at}
     />

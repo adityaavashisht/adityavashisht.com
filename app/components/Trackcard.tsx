@@ -22,7 +22,6 @@ export default function TrackCard({
   lastPlayedAt,
 }: TrackCardProps) {
   const [averageColor, setAverageColor] = useState("");
-
   const calculateAverageColor = useCallback((img: HTMLImageElement) => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
