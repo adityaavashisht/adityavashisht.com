@@ -1,3 +1,5 @@
+import LastVistor from "./LastVisitor";
+
 function ArrowIcon() {
   return (
     <svg
@@ -67,6 +69,7 @@ export default function Footer() {
             Next.js
           </a>
         </p>
+        <LastVistor />
       </div>
     </footer>
   );
