@@ -58,10 +58,10 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <p className="text-xs text-muted">
+        <p className="text-xs font-extralight text-muted">
           Built with love using
           <a
-            className="text-muted ml-1 underline decoration-decoration hover:text-foreground transition-all"
+            className="font-light ml-1 underline decoration-decoration hover:text-foreground transition-all"
             href="https://nextjs.org/"
           >
             Next.js
