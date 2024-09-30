@@ -21,7 +21,6 @@ export default async function LastVisitor() {
       {geodata?.city}
       {geodata?.countryRegion && " " + geodata?.countryRegion + ","}
       {geodata?.country && " " + geodata?.country}
-      {geodata?.region}
     </span>
   );
 }
