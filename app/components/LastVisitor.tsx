@@ -17,10 +17,12 @@ export default async function LastVisitor() {
   }, []);
 
   return (
-    <>
-      {geodata?.city}
-      {geodata?.countryRegion && " " + geodata?.countryRegion + ","}
-      {geodata?.country && " " + geodata?.country}
-    </>
+    geodata && (
+      <>
+        {geodata?.city}
+        {geodata?.countryRegion && " " + geodata?.countryRegion + ","}
+        {geodata?.country && " " + geodata?.country}
+      </>
+    )
   );
 }
