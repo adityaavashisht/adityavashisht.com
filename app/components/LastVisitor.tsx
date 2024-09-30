@@ -17,10 +17,10 @@ export default async function LastVisitor() {
   }, []);
 
   return (
-    <span className="font-light ml-1">
+    <>
       {geodata?.city}
       {geodata?.countryRegion && " " + geodata?.countryRegion + ","}
       {geodata?.country && " " + geodata?.country}
-    </span>
+    </>
   );
 }

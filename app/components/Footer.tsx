@@ -60,9 +60,9 @@ export default function Footer() {
           ))}
         </ul>
       </div>
-      <div className="text-xs font-extralight text-muted">
+      <div className="text-xs font-extralight text-muted flex flex-col gap-y-1">
         <p>
-          Built with love using
+          Built using
           <a
             className="font-light ml-1 underline decoration-decoration hover:text-foreground transition-all"
             href="https://nextjs.org/"
@@ -71,16 +71,18 @@ export default function Footer() {
           </a>
         </p>
 
-        <p className="flex items-center">
-          Current visitor from:
+        <span className="flex items-center gap-x-1">
+          <p>Current visitor from:</p>
           <Suspense
             fallback={
-              <div className="w-20 h-3 bg-loading ml-1 animate-pulse rounded-md" />
+              <span className="w-20 h-3 bg-loading animate-pulse rounded-md" />
             }
           >
-            <LastVistor />
+            <p className="font-light">
+              <LastVistor />
+            </p>
           </Suspense>
-        </p>
+        </span>
       </div>
     </footer>
   );
