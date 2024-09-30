@@ -59,8 +59,8 @@ export default function Footer() {
           ))}
         </ul>
       </div>
-      <div>
-        <p className="text-xs font-extralight text-muted">
+      <div className="text-xs font-extralight text-muted">
+        <p>
           Built with love using
           <a
             className="font-light ml-1 underline decoration-decoration hover:text-foreground transition-all"

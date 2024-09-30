@@ -1,22 +1,32 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { GetGeoLocation, GetGeoLocationResType } from "../utils/api";
 
 export default function LastVisitor() {
+  const [geodata, setGeoData] = useState<GetGeoLocationResType | undefined>();
   useEffect(() => {
-    const fetchLocation = async () => {
-      try {
-        const res = await fetch("/api/geolocation");
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching geolocation:", error);
-      }
-    };
-
-    fetchLocation();
+    GetGeoLocation()
+      .then((data) => {
+        setGeoData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
-  return <></>;
+  return (
+    <>
+      {geodata && geodata.city && (
+        <p>
+          Current visitor from:{" "}
+          <span className="font-light">
+            {geodata?.city}
+            {geodata.countryRegion && " " + geodata?.countryRegion + ","}
+            {geodata.country && " " + geodata?.country}
+          </span>
+        </p>
+      )}
+    </>
+  );
 }
