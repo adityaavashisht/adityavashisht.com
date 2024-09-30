@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { GetGeoLocation, GetGeoLocationResType } from "../utils/api";
 
-export default function LastVisitor() {
+export default async function LastVisitor() {
   const [geodata, setGeoData] = useState<GetGeoLocationResType | undefined>();
+
   useEffect(() => {
     GetGeoLocation()
       .then((data) => {
@@ -16,17 +17,11 @@ export default function LastVisitor() {
   }, []);
 
   return (
-    <>
-      {geodata && geodata.city && (
-        <p>
-          Current visitor from:{" "}
-          <span className="font-light">
-            {geodata?.city}
-            {geodata.countryRegion && " " + geodata?.countryRegion + ","}
-            {geodata.country && " " + geodata?.country}
-          </span>
-        </p>
-      )}
-    </>
+    <span className="font-light ml-1">
+      {geodata?.city}
+      {geodata?.countryRegion && " " + geodata?.countryRegion + ","}
+      {geodata?.country && " " + geodata?.country}
+      {geodata?.region}
+    </span>
   );
 }

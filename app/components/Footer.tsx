@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import LastVistor from "./LastVisitor";
 
 function ArrowIcon() {
@@ -69,7 +70,17 @@ export default function Footer() {
             Next.js
           </a>
         </p>
-        <LastVistor />
+
+        <p className="flex items-center">
+          Current visitor from:
+          <Suspense
+            fallback={
+              <div className="w-20 h-3 bg-loading ml-1 animate-pulse rounded-md" />
+            }
+          >
+            <LastVistor />
+          </Suspense>
+        </p>
       </div>
     </footer>
   );
