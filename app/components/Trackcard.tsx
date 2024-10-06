@@ -30,6 +30,8 @@ export default function TrackCard({
     if (ctx) {
       const regions = 3;
       const regionColors: string[] = [];
+      const brightnessMinThreshold = 50;
+      const brightnessMaxThreshold = 230;
 
       canvas.width = img.width;
       canvas.height = img.height;
@@ -55,7 +57,11 @@ export default function TrackCard({
           const pixelB = data[j + 2];
 
           const brightness = (pixelR + pixelG + pixelB) / 3;
-          if (brightness > 30) {
+
+          if (
+            brightness > brightnessMinThreshold &&
+            brightness < brightnessMaxThreshold
+          ) {
             r += pixelR;
             g += pixelG;
             b += pixelB;
