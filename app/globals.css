@@ -53,7 +53,7 @@
 
 .bar:nth-child(4n - 3) {
   animation-delay: -1.2s;
-  animation-duration: 4.5s;
+  animation-duration: 4s;
 }
 
 .bar:nth-child(4n - 2) {
@@ -66,5 +66,5 @@
 
 .bar:nth-child(4n) {
   animation-delay: -0.3s;
-  animation-duration: 2s;
+  animation-duration: 5s;
 }
