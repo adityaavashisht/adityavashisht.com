@@ -2,6 +2,7 @@
 
 import NextImage from "next/image";
 import { useEffect, useState, useCallback } from "react";
+import formatDate from "../utils/formatDate";
 
 interface TrackCardProps {
   lastPlayedAt: string;
@@ -109,13 +110,13 @@ export default function TrackCard({
           </div>
         </div>
         {isPlaying && (
-          <div className="music-bars flex gap-x-[0.25rem] h-2">
-            {Array(7)
+          <div className="music-bars flex gap-x-[0.13rem] h-[0.2rem]">
+            {Array(6)
               .fill(null)
               .map((_, index) => (
                 <div
                   key={index}
-                  className="bar h-full w-[0.4rem] rounded-sm"
+                  className="bar h-full w-[0.13rem] rounded-[0.03rem]"
                   style={{
                     background: `linear-gradient(180deg, ${
                       dominantColors[0]
@@ -137,7 +138,7 @@ export default function TrackCard({
             {isPlaying
               ? "Listening now"
               : lastPlayedAt
-              ? `Last played on ${lastPlayedAt}`
+              ? `Last played on ${formatDate(lastPlayedAt)}`
               : null}
           </span>
         </div>
