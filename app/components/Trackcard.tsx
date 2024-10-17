@@ -103,16 +103,16 @@ export default function TrackCard({
             className="rounded-lg shadow-sm"
             unoptimized
           />
-          <div className="flex flex-col justify-center h-full gap-y-2">
-            <div className="flex flex-row space-x-1 basis-1/2  items-baseline">
+          <div className="flex flex-col justify-center h-full gap-y-1">
+            <div className="flex flex-row space-x-1 items-baseline">
               {isPlaying && (
-                <div className="flex flex-row space-x-[0.1rem] h-full items-end">
+                <div className="flex flex-row gap-x-[2px]">
                   {Array(3)
                     .fill(null)
                     .map((_, index) => (
                       <div
                         key={index}
-                        className="bar w-[0.2rem] h-[0.2rem] origin-bottom"
+                        className="bar w-[0.19rem] h-[0.17rem] origin-bottom"
                         style={{
                           background: `linear-gradient(180deg, ${
                             dominantColors[0]
@@ -134,7 +134,7 @@ export default function TrackCard({
                 {name}
               </a>
             </div>
-            <span className="text-sm text-muted basis-1/2">{artist}</span>
+            <span className="text-sm text-muted">{artist}</span>
           </div>
         </div>
       </div>
