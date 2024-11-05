@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section className="flex flex-col gap-y-8 text-sm">
       <div>
-        <h1 className="text-saturated font-bold">Aditya Vashisht</h1>
+        <h1 className="text-saturated font-bold text-base">Aditya Vashisht</h1>
         <span className="text-xs font-light">Toronto, ON</span>
       </div>
       <p>
