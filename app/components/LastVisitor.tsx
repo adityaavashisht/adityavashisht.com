@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { GetGeoLocation, GetGeoLocationResType } from "../utils/api";
 
-export default async function LastVisitor() {
+export default function LastVisitor() {
   const [geodata, setGeoData] = useState<GetGeoLocationResType | undefined>();
 
   useEffect(() => {

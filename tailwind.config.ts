@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        saturated: "var(--foreground-saturated)",
         muted: "var(--foreground-muted)",
         card: "var(--background-card)",
         decoration: "var(--decoration)",

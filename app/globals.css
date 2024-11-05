@@ -3,58 +3,102 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #1b1b1b;
+  --background: #141415;
+  --foreground: #a8a7a3;
+  --foreground-saturated: #e7e6e0;
   --foreground-muted: #71717a;
-  --background-card: #f3f4f6;
-  --decoration: #cbd5e1;
+  --background-card: #1f1f22;
+  --background-card-inner: #141415;
+  --decoration: #323235;
   --loading: #e5e7eb;
 }
 
-@keyframes waveAnimation {
-  0% {
-    transform: scaleY(1);
-  }
-  10% {
-    transform: scaleY(2.5);
-  }
-  20% {
-    transform: scaleY(1.3);
-  }
-  30% {
-    transform: scaleY(3.5);
-  }
-  40% {
-    transform: scaleY(2.2);
+* {
+  line-height: 1.6;
+}
+
+@keyframes speaker-pulse {
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
   }
   50% {
-    transform: scaleY(4);
+    transform: scale(0.91) translateZ(0);
   }
-  60% {
-    transform: scaleY(1.5);
+}
+
+@keyframes dust-cap-pulse {
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
   }
-  70% {
-    transform: scaleY(3.8);
+  50% {
+    transform: scale(1.6) translateZ(0);
   }
-  80% {
-    transform: scaleY(2.5);
+}
+
+.animate-speaker {
+  animation: speaker-pulse 0.4s ease-in-out infinite;
+}
+
+.animate-dust-cap {
+  animation: dust-cap-pulse 0.4s ease-in-out infinite;
+}
+
+@keyframes wave1 {
+  0%,
+  100% {
+    transform: scaleY(0.2);
   }
-  90% {
-    transform: scaleY(4.2);
+  50% {
+    transform: scaleY(1);
   }
+}
+@keyframes wave2 {
+  0%,
   100% {
     transform: scaleY(1);
   }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes wave3 {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(0.8);
+  }
+}
+@keyframes wave4 {
+  0%,
+  100% {
+    transform: scaleY(0.8);
+  }
+  50% {
+    transform: scaleY(0.2);
+  }
 }
 
-.bar:nth-child(1) {
-  animation-delay: -0.1s;
+.wave-bar {
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  transition: opacity 0.2s ease;
 }
 
-.bar:nth-child(2) {
-  animation-delay: -0.3s;
+.animate-wave1 {
+  animation-name: wave1;
 }
-
-.bar:nth-child(3) {
-  animation-delay: -0.5s;
+.animate-wave2 {
+  animation-name: wave2;
+}
+.animate-wave3 {
+  animation-name: wave3;
+}
+.animate-wave4 {
+  animation-name: wave4;
 }

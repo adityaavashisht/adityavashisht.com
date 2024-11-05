@@ -16,9 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="leading-10">
       <body
-        className={`${inter.className} antialiased max-w-lg mx-auto px-6 flex flex-col gap-y-11  py-20`}
+        className={`${inter.className} antialiased max-w-lg mx-auto px-6 flex flex-col gap-y-11 py-20 bg-background text-foreground`}
       >
         <main className="flex flex-col gap-y-9">{children}</main>
         <Footer />

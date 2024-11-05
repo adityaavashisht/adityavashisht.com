@@ -1,4 +1,4 @@
-"use Server";
+"use server";
 
 import { getNowPlaying, getRecentlyPlayed } from "../utils/spotify";
 import TrackCard from "./Trackcard";
@@ -7,31 +7,28 @@ export default async function Spotify() {
   const nowPlaying = await getNowPlaying();
   const recentlyPlayed = await getRecentlyPlayed();
 
-  if (!nowPlaying && !recentlyPlayed) {
+  if (!nowPlaying && (!recentlyPlayed || recentlyPlayed.items.length === 0)) {
     return null;
   }
+
+  const isPlaying = Boolean(nowPlaying);
+  const track = isPlaying ? nowPlaying?.item : recentlyPlayed?.items[0].track;
+  const imgUrl = track?.album.images[2]?.url || "";
+  const trackName = track?.name || "";
+  const artist = track?.artists[0]?.name || "";
+  const trackUrl = track?.external_urls?.spotify || "#";
+  const lastPlayedAt = isPlaying
+    ? undefined
+    : recentlyPlayed?.items[0].played_at;
+
   return (
     <TrackCard
-      isPlaying={nowPlaying}
-      name={
-        nowPlaying ? nowPlaying.item.name : recentlyPlayed.items[0].track.name
-      }
-      artist={
-        nowPlaying
-          ? nowPlaying.item.artists[0].name
-          : recentlyPlayed.items[0].track.artists[0].name
-      }
-      imgUrl={
-        nowPlaying
-          ? nowPlaying.item.album.images[2].url
-          : recentlyPlayed.items[0].track.album.images[2].url
-      }
-      trackUrl={
-        nowPlaying
-          ? nowPlaying.item.external_urls.spotify
-          : recentlyPlayed.items[0].track.external_urls.spotify
-      }
-      lastPlayedAt={recentlyPlayed.items[0].played_at}
+      isPlaying={isPlaying}
+      name={trackName}
+      artist={artist}
+      imgUrl={imgUrl}
+      trackUrl={trackUrl}
+      lastPlayedAt={lastPlayedAt}
     />
   );
 }

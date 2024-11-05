@@ -40,7 +40,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col gap-y-8">
       <div className="flex flex-col gap-y-4">
-        <p className="font-semibold text-sm">Lets get in touch</p>
+        <p className="font-semibold text-sm text-saturated">Socials</p>
         <ul className="text-sm flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 text-foreground">
           {socials.map(({ title, url }) => (
             <li key={title}>
@@ -52,7 +52,7 @@ export default function Footer() {
                 download={title === "Resume"}
               >
                 <ArrowIcon />
-                <p className="ml-2 underline decoration-decoration hover:text-muted transition-all">
+                <p className="ml-2 underline decoration-decoration hover:text-saturated transition-all underline-offset-4">
                   {title}
                 </p>
               </a>
@@ -60,11 +60,11 @@ export default function Footer() {
           ))}
         </ul>
       </div>
-      <div className="text-xs font-extralight text-muted flex flex-col gap-y-1">
+      <div className="text-xs font-extralight flex flex-col gap-y-1">
         <p>
           Built using
           <a
-            className="font-light ml-1 underline decoration-decoration hover:text-foreground transition-all"
+            className="font-light ml-1 underline decoration-foreground hover:text-saturated transition-all"
             href="https://nextjs.org/"
           >
             Next.js
@@ -75,7 +75,7 @@ export default function Footer() {
           <p>Current visitor from:</p>
           <Suspense
             fallback={
-              <span className="w-20 h-3 bg-loading animate-pulse rounded-md" />
+              <span className="w-20 h-3 bg-decoration animate-pulse rounded-md" />
             }
           >
             <p className="font-light">

@@ -1,16 +1,36 @@
+import Highlight from "./Hightlight";
+import Image from "next/image";
+
 export default function About() {
   return (
-    <section className="flex flex-col gap-y-10 font-light text-sm">
-      <h1 className="text-lg font-semibold">Aditya Vashisht</h1>
-      <p>{"I'm a Developer based in Toronto, ON."}</p>
+    <section className="flex flex-col gap-y-8 text-sm">
+      <div>
+        <h1 className="text-saturated font-bold text-lg">Aditya Vashisht</h1>
+        <span className="text-xs font-light">Toronto, ON</span>
+      </div>
       <p>
-        {
-          "Currently, I'm a Frontend Lead at Accenture, crafting meaningful web experiences with cutting-edge tech. These days, I've been neck-deep in Next.js (so, of course, React), along with NestJS and TypeScript."
-        }
+        I'm a frontend developer, sometimes full-stack. I currently work at
+        Accenture where I help craft meaningful web experiences with
+        cutting-edge tech. These days, I've been neck-deep in{" "}
+        <Highlight>Next.js</Highlight> (so, of course,{" "}
+        <Highlight>React</Highlight>), along with <Highlight>NestJS</Highlight>{" "}
+        and <Highlight>TypeScript</Highlight>.
       </p>
+      <div className="bg-card p-2 rounded-lg border border-decoration ">
+        <div className="relative w-full aspect-video">
+          <Image
+            src="/me.jpeg"
+            alt="Aditya standing on a bridge"
+            className="w-full shadow-md object-cover"
+            sizes="(max-width: 512px) 100vw, 512px"
+            fill
+            priority
+          />
+        </div>
+      </div>
       <p>
         {
-          "When I'm not immersed in code, you can usually find me lifting weights and occasionally feeling curious about the vastness of space."
+          "When I'm not immersed in code, you can usually find me lifting weights, hiking or reading about rockets and space."
         }
       </p>
     </section>

@@ -1,5 +1,49 @@
 "use server";
 
+interface SpotifyImage {
+  url: string;
+}
+
+interface SpotifyArtist {
+  id: string;
+  name: string;
+  external_urls: {
+    spotify: string;
+  };
+}
+
+interface SpotifyAlbum {
+  id: string;
+  name: string;
+  images: SpotifyImage[];
+}
+
+interface SpotifyTrack {
+  id: string;
+  name: string;
+  album: SpotifyAlbum;
+  artists: SpotifyArtist[];
+  external_urls: {
+    spotify: string;
+  };
+}
+
+export interface NowPlayingResponse {
+  is_playing: boolean;
+  item: SpotifyTrack;
+  progress_ms: number;
+  timestamp: number;
+}
+
+// Interface for getRecentlyPlayed response
+export interface RecentlyPlayedResponse {
+  items: {
+    track: SpotifyTrack;
+    played_at: string;
+  }[];
+  href: string;
+}
+
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -26,33 +70,40 @@ export const getAccessToken = async () => {
   });
 
   const data = await res.json();
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch access token: ${data.error}`);
-  }
   return data.access_token;
 };
 
-export const getRecentlyPlayed = async () => {
-  const access_token = await getAccessToken();
-  const res = await fetch(RECENTLY_PLAYED_ENDPOINT, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-  return await res.json();
-};
-
-export const getNowPlaying = async () => {
-  const access_token = await getAccessToken();
-  const res = await fetch(CURRENTLY_PLAYING_ENDPOINT, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-
-  if (res.status === 204) {
+export const getNowPlaying = async (): Promise<NowPlayingResponse | null> => {
+  try {
+    const access_token = await getAccessToken();
+    const res = await fetch(CURRENTLY_PLAYING_ENDPOINT, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+    if (res.status === 204 || !res.ok) {
+      return null;
+    }
+    return await res.json();
+  } catch (error) {
     return null;
   }
-  return await res.json();
 };
+
+export const getRecentlyPlayed =
+  async (): Promise<RecentlyPlayedResponse | null> => {
+    try {
+      const access_token = await getAccessToken();
+      const res = await fetch(RECENTLY_PLAYED_ENDPOINT, {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      });
+      if (!res.ok) {
+        return null;
+      }
+      return await res.json();
+    } catch (error) {
+      return null;
+    }
+  };
