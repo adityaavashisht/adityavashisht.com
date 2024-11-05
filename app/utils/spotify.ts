@@ -85,6 +85,7 @@ export const getNowPlaying = async (): Promise<NowPlayingResponse | null> => {
       return null;
     }
     return await res.json();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return null;
   }
@@ -103,6 +104,7 @@ export const getRecentlyPlayed =
         return null;
       }
       return await res.json();
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return null;
     }

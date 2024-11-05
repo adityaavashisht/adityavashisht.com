@@ -9,9 +9,9 @@ export default function About() {
         <span className="text-xs font-light">Toronto, ON</span>
       </div>
       <p>
-        I'm a frontend developer, sometimes full-stack. I currently work at
+        I&apos;m a frontend developer, sometimes full-stack. I currently work at
         Accenture where I help craft meaningful web experiences with
-        cutting-edge tech. These days, I've been neck-deep in{" "}
+        cutting-edge tech. These days, I&apos;ve been neck-deep in{" "}
         <Highlight>Next.js</Highlight> (so, of course,{" "}
         <Highlight>React</Highlight>), along with <Highlight>NestJS</Highlight>{" "}
         and <Highlight>TypeScript</Highlight>.
