@@ -51,10 +51,10 @@ export default function TrackCard({
         <div className="flex space-x-1 items-center">
           <span
             className={`h-2 w-2 rounded-full shadow-sm ${
-              isPlaying ? "bg-green-500" : "bg-gray-400"
+              isPlaying ? "bg-green-500" : "bg-muted"
             }`}
           />
-          <span className="text-xs font-light">
+          <span className="text-xs opacity-65">
             {isPlaying
               ? "Listening now"
               : lastPlayedAt
