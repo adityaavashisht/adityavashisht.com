@@ -34,7 +34,7 @@ export default function TrackCard({
           <div className="flex flex-col justify-center h-full gap-y-1 ">
             <div className="flex flex-row space-x-1 items-baseline ">
               <a
-                className="text-sm truncate max-w-48 sm:max-w-80  underline underline-offset-4 decoration-decoration cursor-pointer hover:text-saturated"
+                className="text-sm truncate max-w-48 sm:max-w-80 underline underline-offset-4 decoration-decoration cursor-pointer hover:text-saturated"
                 href={trackUrl}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -42,7 +42,7 @@ export default function TrackCard({
                 {name}
               </a>
             </div>
-            <span className="text-sm text-muted">{artist}</span>
+            <span className="text-sm opacity-65">{artist}</span>
           </div>
         </div>
         {isPlaying && <Speaker />}
