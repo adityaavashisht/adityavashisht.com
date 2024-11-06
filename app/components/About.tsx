@@ -1,5 +1,6 @@
 import Highlight from "./Hightlight";
 import Image from "next/image";
+import cover from "@/public/me.jpeg";
 
 export default function About() {
   return (
@@ -19,12 +20,13 @@ export default function About() {
       <div className="bg-card p-2 rounded-lg border border-decoration ">
         <div className="relative w-full aspect-video">
           <Image
-            src="/me.jpeg"
+            src={cover}
             alt="Aditya standing on a bridge"
             className="w-full shadow-md object-cover"
             sizes="(max-width: 512px) 100vw, 512px"
             fill
             priority
+            placeholder="blur"
           />
         </div>
       </div>
