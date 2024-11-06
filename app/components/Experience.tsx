@@ -7,13 +7,13 @@ export default function Experience() {
       {data.map(({ company, role, startYear, endYear, description }, index) => (
         <div className="text-sm" key={index + 1}>
           <div>
-            <span className="text-xs">{role}</span>
+            <span className="text-xs opacity-65">{role}</span>
           </div>
-          <span className=" text-saturated">{company}</span>
+          <span className="text-saturated">{company}</span>
           <span className="ml-2 opacity-65 text-xs">
             {startYear} - {endYear}
           </span>
-          <p className="opacity-65">{description}</p>
+          <p className="">{description}</p>
         </div>
       ))}
     </section>
