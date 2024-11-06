@@ -2,6 +2,7 @@ import NextImage from "next/image";
 import formatDate from "../utils/formatDate";
 import AudioWave from "./AudioWave";
 import Speaker from "./Speaker";
+import BlurImage from "./BlurImage";
 
 interface TrackCardProps {
   lastPlayedAt: string | undefined;
@@ -24,7 +25,7 @@ export default function TrackCard({
     <div className="w-full rounded-xl bg-card flex flex-col space-y-1">
       <div className="w-full rounded-xl flex items-center justify-between shadow-sm p-1 pr-2 border border-decoration  bg-[#141415] h-16 ">
         <div className="flex space-x-2 h-full items-center">
-          <NextImage
+          <BlurImage
             src={imgUrl}
             alt={`Album cover for ${name} by ${artist}`}
             width={54}
