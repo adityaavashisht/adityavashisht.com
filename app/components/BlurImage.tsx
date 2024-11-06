@@ -35,16 +35,14 @@ export default async function BlurImage({
 }: BlurImageProps) {
   const blurDataURL = await getBlurDataURL(src);
   return (
-    <div className="relative w-full aspect-video">
-      <Image
-        className={className}
-        height={height}
-        width={width}
-        src={src}
-        alt={alt}
-        placeholder="blur"
-        blurDataURL={blurDataURL || undefined}
-      />
-    </div>
+    <Image
+      className={className}
+      height={height}
+      width={width}
+      src={src}
+      alt={alt}
+      placeholder="blur"
+      blurDataURL={blurDataURL || undefined}
+    />
   );
 }
