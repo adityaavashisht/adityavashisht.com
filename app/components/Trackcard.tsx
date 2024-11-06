@@ -1,4 +1,3 @@
-import NextImage from "next/image";
 import formatDate from "../utils/formatDate";
 import AudioWave from "./AudioWave";
 import Speaker from "./Speaker";
