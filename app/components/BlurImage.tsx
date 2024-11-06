@@ -20,6 +20,7 @@ async function getBlurDataURL(imageUrl: string): Promise<string | null> {
     const buffer = await res.arrayBuffer();
     const { base64 } = await getPlaiceholder(Buffer.from(buffer));
     return base64;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     return null;
   }
