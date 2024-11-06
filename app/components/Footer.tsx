@@ -64,7 +64,7 @@ export default function Footer() {
         <p>
           Built using
           <a
-            className="font-light ml-1 underline decoration-foreground hover:text-saturated transition-all"
+            className="font-light ml-1 underline underline-offset-4 decoration-decoration hover:text-saturated transition-all"
             href="https://nextjs.org/"
           >
             Next.js
