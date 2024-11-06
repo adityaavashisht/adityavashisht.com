@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Footer from "./components/Footer";
 
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased max-w-lg mx-auto px-6 flex flex-col gap-y-11 py-20 bg-background text-foreground`}
       >
-        <main className="flex flex-col gap-y-9">{children}</main>
+        <main className="flex flex-col gap-y-9">
+          {children} <Analytics mode={"production"} />;
+        </main>
         <Footer />
       </body>
     </html>
