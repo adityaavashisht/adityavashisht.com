@@ -12,10 +12,12 @@ export default function About() {
       <p>
         I&apos;m a frontend developer - sometimes full-stack. I currently work
         at Accenture where I help craft meaningful web experiences with
-        cutting-edge tech. These days, I&apos;ve been neck-deep in{" "}
-        <Highlight>Next.js</Highlight> (so, of course,{" "}
-        <Highlight>React</Highlight>), along with <Highlight>NestJS</Highlight>{" "}
-        and <Highlight>TypeScript</Highlight>.
+        cutting-edge tech.
+      </p>
+      <p>
+        These days, I&apos;ve been neck-deep in <Highlight>Next.js</Highlight>{" "}
+        (so, of course, <Highlight>React</Highlight>), along with{" "}
+        <Highlight>NestJS</Highlight> and <Highlight>TypeScript</Highlight>.
       </p>
       <div className="bg-card p-2 rounded-lg border border-decoration ">
         <div className="relative w-full aspect-video">
