@@ -19,7 +19,7 @@ export const data = [
     company: "Accenture",
     role: "Frontend Developer",
     startYear: "2021",
-    endYear: "2020",
+    endYear: "2022",
     description:
       "Assisted in developing a customer portal for a major transportation company in Toronto, designed to send real-time alerts regarding train and bus services.",
   },
