@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Footer from "./components/Footer";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" className="leading-10">

@@ -12,6 +12,7 @@ const nextConfig = {
       },
     ],
   },
+  turbopack: {},
 };
 
 export default withPlaiceholder(nextConfig);
