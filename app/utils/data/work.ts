@@ -1,11 +1,11 @@
 export const data = [
   {
     company: "Accenture",
-    role: "Frontend Lead",
+    role: "Dev Lead",
     startYear: "2023",
     endYear: "present",
     description:
-      "Helping build a web experience that will be leveraged by millions of Canadians for estimating employment insurance benefits.",
+      "Helping build and maintain a web application currently used by thousands of Canadians every day.",
   },
   {
     company: "Accenture",

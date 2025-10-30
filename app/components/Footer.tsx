@@ -21,20 +21,16 @@ function ArrowIcon() {
 export default function Footer() {
   const socials = [
     {
+      title: "X (Twitter)",
+      url: "https://twitter.com/vashishtaditya_",
+    },
+    {
       title: "Github",
       url: "https://github.com/adityaavashisht",
     },
     {
-      title: "Twitter",
-      url: "https://twitter.com/vashishtaditya_",
-    },
-    {
       title: "Linkedin",
       url: "https://www.linkedin.com/in/adityavashisht/",
-    },
-    {
-      title: "Resume",
-      url: "/resume.pdf",
     },
   ];
   return (
@@ -62,7 +58,7 @@ export default function Footer() {
       </div>
       <div className="text-xs font-extralight flex flex-col gap-y-1">
         <p>
-          Built using
+          Built with love using
           <a
             className="font-light ml-1 underline underline-offset-4 decoration-decoration hover:text-saturated transition-all"
             href="https://nextjs.org/"
