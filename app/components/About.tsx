@@ -33,7 +33,7 @@ export default function About() {
         </div>
       </div>
       <p>
-      When I'm not drowning in code, I'm prpbably lifting weights, out on a trail or reading about rockets and space.
+      When I'm not drowning in code, I'm probably lifting weights, out on a trail or reading about rockets and space.
       </p>
     </section>
   );
