@@ -25,7 +25,7 @@ export default function Footer() {
       url: "https://twitter.com/vashishtaditya_",
     },
     {
-      title: "Github",
+      title: "GitHub",
       url: "https://github.com/adityaavashisht",
     },
     {
