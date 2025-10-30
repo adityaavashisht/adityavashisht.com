@@ -15,10 +15,10 @@ export default function About() {
         cutting-edge tech.
       </p>
       <p>
-        These days, I&apos;ve been neck-deep in <Highlight>Next.js</Highlight>{" "}
-        (so, of course, <Highlight>React</Highlight>), along with{" "}
-        <Highlight>NestJS</Highlight> and <Highlight>TypeScript</Highlight>.
-      </p>
+        These days, I&apos;ve been neck-deep in <Highlight>AI SDK</Highlight>{" "}
+        (so, of course, <Highlight>LLMs</Highlight>), along with <Highlight>Next.js</Highlight>{" "}
+        and <Highlight>TypeScript</Highlight>, and not to forget, <Highlight>NestJS</Highlight> too.      
+       </p>
       <div className="bg-card p-2 rounded-lg border border-decoration ">
         <div className="relative w-full aspect-video">
           <Image
@@ -33,9 +33,7 @@ export default function About() {
         </div>
       </div>
       <p>
-        {
-          "When I'm not immersed in code, you can usually find me lifting weights, hiking or reading about rockets and space."
-        }
+      When I'm not drowning in code, I'm prpbably lifting weights, out on a trail or reading about rockets and space.
       </p>
     </section>
   );
