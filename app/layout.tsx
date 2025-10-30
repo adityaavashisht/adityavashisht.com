@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Footer from "./components/Footer";
 
