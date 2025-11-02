@@ -24,7 +24,6 @@ This repo powers [adityavashisht.com](https://adityavashisht.com), a mobile-firs
 - Tailwind CSS 3
 - Vercel Analytics & Edge Functions
 - Spotify Web API
-- `@plaiceholder/next` + `sharp` for blur placeholders
 
 > Recommended Node.js version: **18.18+** (Node 20 works too).
 
