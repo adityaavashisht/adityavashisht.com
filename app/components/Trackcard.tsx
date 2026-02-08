@@ -21,15 +21,15 @@ export default function TrackCard({
   lastPlayedAt,
 }: TrackCardProps) {
   return (
-    <div className="w-full rounded-[4px] bg-card flex flex-col space-y-1">
-      <div className="w-full rounded-[4px] flex items-center justify-between shadow-sm p-1 pr-2 border border-decoration  bg-[#141415] h-16 ">
+    <div className="w-full rounded-xl bg-card flex flex-col space-y-1">
+      <div className="w-full rounded-xl flex items-center justify-between shadow-sm p-1 pr-2 border border-decoration  bg-[#141415] h-16 ">
         <div className="flex space-x-2 h-full items-center">
           <BlurImage
             src={imgUrl}
             alt={`Album cover for ${name} by ${artist}`}
             width={54}
             height={54}
-            className="rounded-[4px] shadow-sm"
+            className="rounded-lg shadow-sm"
           />
           <div className="flex flex-col justify-center h-full gap-y-1 ">
             <div className="flex flex-row space-x-1 items-baseline ">
