@@ -7,7 +7,7 @@ export default function About() {
     <section className="flex flex-col gap-y-8 text-sm">
       <div>
         <h1 className="text-saturated font-bold text-xl">Aditya Vashisht</h1>
-        <span className="text-xs font-light">Based in Toronto.</span>
+        <span className="text-xs font-light opacity-65">Based in Toronto.</span>
       </div>
       <p>
         I&apos;m a developer at Accenture, crafting meaningful
