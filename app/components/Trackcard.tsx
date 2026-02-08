@@ -2,7 +2,6 @@ import formatDate from "../utils/formatDate";
 import AudioWave from "./AudioWave";
 import Speaker from "./Speaker";
 import BlurImage from "./BlurImage";
-import { GeistMono } from "geist/font/mono";
 
 interface TrackCardProps {
   lastPlayedAt: string | undefined;
@@ -22,9 +21,7 @@ export default function TrackCard({
   lastPlayedAt,
 }: TrackCardProps) {
   return (
-    <div
-      className={`${GeistMono.className} w-full rounded-[4px] bg-card flex flex-col space-y-1`}
-    >
+    <div className="w-full rounded-[4px] bg-card flex flex-col space-y-1">
       <div className="w-full rounded-[4px] flex items-center justify-between shadow-sm p-1 pr-2 border border-decoration  bg-[#141415] h-16 ">
         <div className="flex space-x-2 h-full items-center">
           <BlurImage
