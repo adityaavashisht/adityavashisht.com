@@ -18,7 +18,7 @@ export default function About() {
         (so, of course, <Highlight>LLMs</Highlight>), along with <Highlight>Next.js</Highlight>{" "}
         and <Highlight>TypeScript</Highlight>, and not to forget, <Highlight>NestJS</Highlight> too.      
        </p>
-      <div className="bg-card p-2 rounded-lg border border-decoration ">
+      <div className="bg-card p-2 rounded-md border border-decoration ">
         <div className="relative w-full aspect-video">
           <Image
             src={cover}
