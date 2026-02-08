@@ -10,7 +10,8 @@ export default function About() {
         <span className="text-xs font-light">Based in Toronto.</span>
       </div>
       <p>
-      I'm a developer. Currently working at Accenture, engineering impactful web experiences with cutting-edge tech.
+        I&apos;m a developer. Currently working at Accenture, engineering impactful
+        web experiences with cutting-edge tech.
       </p>
       <p>
         These days, I&apos;ve been neck-deep in <Highlight>AI SDK</Highlight>{" "}
@@ -31,7 +32,8 @@ export default function About() {
         </div>
       </div>
       <p>
-      When I'm not drowning in code, I'm probably lifting weights, out on a trail or reading about rockets and space.
+        When I&apos;m not drowning in code, I&apos;m probably lifting weights, out
+        on a trail or reading about rockets and space.
       </p>
     </section>
   );
