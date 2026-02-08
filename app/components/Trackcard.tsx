@@ -21,7 +21,7 @@ export default function TrackCard({
   lastPlayedAt,
 }: TrackCardProps) {
   return (
-    <div className="w-full rounded-md bg-card flex flex-col space-y-1">
+    <div className="w-full rounded-lg bg-card flex flex-col space-y-1">
       <div className="w-full rounded-[4px] flex items-center justify-between shadow-sm p-1 pr-2 border border-decoration  bg-[#141415] h-16 ">
         <div className="flex space-x-2 h-full items-center">
           <BlurImage
@@ -31,7 +31,7 @@ export default function TrackCard({
             height={54}
             className="rounded-[4px] shadow-sm"
           />
-          <div className="flex flex-col justify-center h-full gap-y-1 rounded-sm">
+          <div className="flex flex-col justify-center h-full gap-y-1 rounded-md">
             <div className="flex flex-row space-x-1 items-baseline ">
               <a
                 className="text-sm truncate max-w-48 sm:max-w-80 underline underline-offset-4 decoration-decoration cursor-pointer hover:text-saturated"
