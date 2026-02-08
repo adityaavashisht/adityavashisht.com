@@ -10,8 +10,8 @@ export default function About() {
         <span className="text-xs font-light">Based in Toronto.</span>
       </div>
       <p>
-        I&apos;m a developer. Currently working at Accenture, engineering impactful
-        web experiences with cutting-edge tech.
+        I&apos;m a developer at Accenture, crafting meaningful
+        web experiences through cutting-edge tech and modern engineering.
       </p>
       <p>
         These days, I&apos;ve been neck-deep in <Highlight>AI SDK</Highlight>{" "}
