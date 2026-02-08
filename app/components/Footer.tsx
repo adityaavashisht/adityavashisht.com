@@ -71,7 +71,7 @@ export default function Footer() {
           <p>Current visitor from:</p>
           <Suspense
             fallback={
-              <span className="w-20 h-3 bg-decoration animate-pulse rounded-md" />
+              <span className="w-20 h-3 bg-decoration animate-pulse rounded-[4px]" />
             }
           >
             <p className="font-light">
