@@ -6,13 +6,11 @@ export default function About() {
   return (
     <section className="flex flex-col gap-y-8 text-sm">
       <div>
-        <h1 className="text-saturated font-bold text-base">Aditya Vashisht</h1>
-        <span className="text-xs font-light">Toronto, ON</span>
+        <h1 className="text-saturated font-bold text-xl">Aditya Vashisht</h1>
+        <span className="text-xs font-light">Based in Toronto.</span>
       </div>
       <p>
-        I&apos;m a frontend developer - sometimes full-stack. I currently work
-        at Accenture where I help craft meaningful web experiences with
-        cutting-edge tech.
+      I'm a developer. Currently working at Accenture, engineering impactful web experiences with cutting-edge tech.
       </p>
       <p>
         These days, I&apos;ve been neck-deep in <Highlight>AI SDK</Highlight>{" "}
