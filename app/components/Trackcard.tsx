@@ -47,7 +47,7 @@ export default function TrackCard({
         </div>
         {isPlaying && <Speaker />}
       </div>
-      <div className="flex justify-between items-center px-2 pb-2 rounded-md">
+      <div className="flex justify-between items-center px-2 pb-2 rounded-lg">
         <div className="flex space-x-1 items-center">
           <span
             className={`h-2 w-2 rounded-full shadow-sm ${
